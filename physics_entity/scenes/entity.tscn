@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://6iihunb5cikr"]
+
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_udgm4"]
+[ext_resource type="Texture2D" uid="uid://bmfmwlu4ke4b2" path="res://resources/shadow.png" id="2_aj3sp"]
+[ext_resource type="Script" path="res://scripts/entity_sprite_container.gd" id="3_nxloy"]
+
+[node name="Entity" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_udgm4")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("2_aj3sp")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+
+[node name="SpriteContainer" type="Node2D" parent="."]
+script = ExtResource("3_nxloy")
+
+[connection signal="z_changed" from="." to="SpriteContainer" method="_on_entity_z_changed"]

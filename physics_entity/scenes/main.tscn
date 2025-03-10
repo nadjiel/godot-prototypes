@@ -1,0 +1,165 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdrh5ywwag6yy"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_810mw"]
+[ext_resource type="PackedScene" uid="uid://fp35w0ys100c" path="res://scenes/slime.tscn" id="1_w8m4i"]
+[ext_resource type="FontFile" uid="uid://dcdtvfuy6g7d0" path="res://resources/apple_2_pro.otf" id="2_x0nfg"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_810mw")
+
+[node name="Slime" parent="." instance=ExtResource("1_w8m4i")]
+position = Vector2(128, 72)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Margin" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Container" type="Control" parent="UI/Margin"]
+layout_mode = 2
+
+[node name="InputInfo" type="VBoxContainer" parent="UI/Margin/Container"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Speed" type="HBoxContainer" parent="UI/Margin/Container/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Margin/Container/InputInfo/Speed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "spd:"
+
+[node name="Value" type="Label" parent="UI/Margin/Container/InputInfo/Speed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Measure" type="Label" parent="UI/Margin/Container/InputInfo/Speed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "px/s"
+
+[node name="ZSpeed" type="HBoxContainer" parent="UI/Margin/Container/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Margin/Container/InputInfo/ZSpeed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "z_spd:"
+
+[node name="Value" type="Label" parent="UI/Margin/Container/InputInfo/ZSpeed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Measure" type="Label" parent="UI/Margin/Container/InputInfo/ZSpeed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "px/s"
+
+[node name="Direction" type="HBoxContainer" parent="UI/Margin/Container/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Margin/Container/InputInfo/Direction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "dir:"
+
+[node name="Value" type="Label" parent="UI/Margin/Container/InputInfo/Direction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="FacingDirection" type="HBoxContainer" parent="UI/Margin/Container/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Margin/Container/InputInfo/FacingDirection"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "face:"
+
+[node name="Value" type="Label" parent="UI/Margin/Container/InputInfo/FacingDirection"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Margin/Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -106.0
+offset_bottom = 20.0
+grow_horizontal = 0
+
+[node name="PeakSpeed" type="HBoxContainer" parent="UI/Margin/Container/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="UI/Margin/Container/VBoxContainer/PeakSpeed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "peak_spd:"
+
+[node name="Value" type="Label" parent="UI/Margin/Container/VBoxContainer/PeakSpeed"]
+custom_minimum_size = Vector2(21, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Measure" type="Label" parent="UI/Margin/Container/VBoxContainer/PeakSpeed"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "px/s"
+
+[node name="Peak" type="HBoxContainer" parent="UI/Margin/Container/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="UI/Margin/Container/VBoxContainer/Peak"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "peak:"
+
+[node name="Value" type="Label" parent="UI/Margin/Container/VBoxContainer/Peak"]
+custom_minimum_size = Vector2(21, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Measure" type="Label" parent="UI/Margin/Container/VBoxContainer/Peak"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x0nfg")
+theme_override_font_sizes/font_size = 8
+text = "px"
